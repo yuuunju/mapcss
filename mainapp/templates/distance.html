@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script type="module" src="{% static 'js\data.json' %}"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY9JXaSCF1_OzdOHv6Md2UMSxCzHItx80&callback=libraries=places%22%3E</script>
+    <script type="text/javascript"> -->
+    <script>
+
+    // const fs = require('fs')
+    // const http = require('http')
+    // const url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&mode=transit&origins=37.541,126.986&destinations=35.1595454,126.8526012&region=KR&key=AIzaSyDY9JXaSCF1_OzdOHv6Md2UMSxCzHItx80'
+    // // const fileName = "{% static 'js\data.json' %}"
+    // http.get(url, function (res) {
+    //     res.pipe(fs.createWriteStream("{% static 'js\data.json' %}"))
+    // })
+    var requestData
+
+    const request = require('request')
+
+    document.write("val")
+    URL = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&mode=transit&origins=37.541,126.986&destinations=35.1595454,126.8526012&region=KR&key=AIzaSyDY9JXaSCF1_OzdOHv6Md2UMSxCzHItx80'
+    response = requests.get(URL)
+
+    document.write("val" + response.rows[0].elements[0].duration.value)
+
+
+    print("val")
+</script>
+</body>
+</html>
