@@ -4,6 +4,7 @@
 <head>
 	<title>위치기반 지역정보 검색</title>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" href="mapcss.css">
 </head>
 
 <body class="docs framebox_body">
@@ -14,8 +15,6 @@
 		var markers = [];
 		var autocomplete;
         
-
-
         //지도 설정
 		function initialize() {
 			var myLatlng = new google.maps.LatLng(37.566535, 126.97796919999996);
@@ -168,8 +167,8 @@
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
+
 	<style type="text/css">
-		
         /* 웹페이지  */
         html, body {
 			margin: 0;
@@ -177,12 +176,12 @@
 			height: 100%;
 			font-family: arial;
 			font-size: 13px;
-			overflow: hidden;
+
 		}
 
         /* 지도 css */
 		#map_canvas {
-			float: left;
+			float: center;
 			width: 820px;
 			height: 406px;
 		}
@@ -222,19 +221,22 @@
         /* 주소 입력 칸 크기 */
 		#autocomplete {
 			width: 516px;
-			border: 1px solid #ccc;
+			border: 3px solid #ccc;
 		}
 	</style>
 
+<h2>✈ 국내 여행지 찾기</h2><hr><br>
 	<!-- 주소 검색창  -->
 	<div id="locationField">
 		<input id="autocomplete" type="text">
 	</div>
-	
+	<br>
 	<!-- 맵 -->
 	<div id="map_canvas"></div>
+	
 	<div id="controls">
 		<form name="controls">
+			<h3>< 이 주변의 핫플레이스 ></h3>
 			<input type="radio" name="type" value="tourist_attraction" onclick="search()" checked="checked" />관광지
 			<br/>
             <input type="radio" name="type" value="cafe" onclick="search()"  />카페
@@ -252,7 +254,7 @@
 	</div>
 
     <form>
-        <select name="time" >
+        <select id="timefont" name="time" >
           <option value="none">=== 시간 선택 ===</option>
           <option value=1>1시간</option>
           <option value=1.5>1시간 30분</option>
@@ -261,6 +263,7 @@
           <option value=3>3시간</option>
         </select>
     </form>
+
 
 </body>
 
